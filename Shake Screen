@@ -1,0 +1,17 @@
+console.log("Shake the Webpage:");
+        var body = document.body;
+        var originalMargin = body.style.marginLeft;
+        var marginLeft = 10;
+        var direction = 1;
+
+        function shake() {
+            body.style.marginLeft = `${marginLeft}px`;
+            marginLeft += direction * 10;
+            if (marginLeft > 20 || marginLeft < 0) {
+                direction *= -1;
+            }
+            requestAnimationFrame(shake);
+        }
+
+        shake();
+        console.log("Webpage is shaking.");

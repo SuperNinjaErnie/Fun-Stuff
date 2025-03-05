@@ -1,0 +1,7 @@
+console.log("Play a Beep Sound:");
+        var context = new AudioContext();
+        var o = context.createOscillator();
+        o.type = 'sine';
+        o.connect(context.destination);
+        o.start();
+        setTimeout(function(){ o.stop(); console.log("Beep sound played."); }, 500);
