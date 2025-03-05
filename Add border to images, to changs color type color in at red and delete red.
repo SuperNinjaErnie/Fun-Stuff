@@ -1,0 +1,21 @@
+console.log("Add Border to All Images:");
+        var images = document.getElementsByTagName('img');
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.border = '2px solid red';
+        }
+        console.log("Added red border to all images.");
+
+        // 13. Blink Text
+        console.log("Blink Text:");
+        var blinkText = document.createElement('p');
+        blinkText.innerText = "Blinking Text!";
+        blinkText.style.color = 'red';
+        document.body.appendChild(blinkText);
+
+        function blink() {
+            blinkText.style.visibility = (blinkText.style.visibility === 'hidden' ? '' : 'hidden');
+            setTimeout(blink, 500);
+        }
+
+        blink();
+        console.log("Blinking text added.");
